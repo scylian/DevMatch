@@ -23,14 +23,16 @@
 h1, h2, h3 {
   font-family: 'Open Sans', sans-serif;
 }
+// END Typography Styles
 
-// Background Gradient
+// Background Gradient Styles
 .home-callout, .navbar {
   // Gradient provided by @_ighosh at uiGradients.com
   background: #E0EAFC; /* fallback for old browsers */
   background: -webkit-linear-gradient(to left, #E0EAFC , #CFDEF3); /* Chrome 10-25, Safari 5.1-6 */
   background: linear-gradient(to left, #E0EAFC , #CFDEF3); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
+// END Background Gradient Styles
 
 // Home Page Styles
 .home-callout {
@@ -39,8 +41,9 @@ h1, h2, h3 {
   padding-top: 50px;
   padding-bottom: 100px;
 }
+// END Home Page Styles
 
-// Nav styles
+// Nav Styles
 .navbar {
   border: none;
 }
@@ -60,3 +63,10 @@ h1, h2, h3 {
     background-color: #CFDEF3;
   }
 }
+// END Nav Styles
+
+// User Authentication Styles
+.alert-notice {
+  display: none;
+}
+// END User Authentication Styles
