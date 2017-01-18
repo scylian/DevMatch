@@ -12,8 +12,9 @@ class ProfilesController < ApplicationController
     @profile = @user.build_profile(profile_params) # Create profile linked to this specific user
     if @profile.save
       flash[:notice] = "Profile updated!"
-      redirect_to user_path( params[:user_id] )
+      redirect_to user_path( id: params[:user_id] )
     else
+      flash[:notice] = "Error occured while creating profile."
       render action: :new
     end
   end
@@ -22,6 +23,19 @@ class ProfilesController < ApplicationController
   def edit
     @user = User.find( params[:user_id] )
     @profile = @user.profile
+  end
+  
+  # PATCH/PUT to /users/:user_id/profile
+  def update
+    @user = User.find( params[:user_id] )         # Retrieve the user from the database
+    @profile = @user.profile                      # Retrieve that user's profile
+    if @profile.update_attributes(profile_params) # Mass assign edited profile attributes and save (update)
+      flash[:notice] = "Profile updated!"
+      redirect_to user_path( id: params[:user_id])     # Redirect user to their profile page
+    else
+      flash[:notice] = "Error occurred while updating profile."
+      render action: :edit
+    end
   end
   
   private
